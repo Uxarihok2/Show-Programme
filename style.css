@@ -1,0 +1,178 @@
+
+
+/* 全局樣式 */
+body {
+  font-family: 'Noto Serif TC', serif;
+  margin: 0 !important;
+  padding: 0;
+  background-color: #f5f1c5;
+  color: #661115;
+}
+
+/* 頁首樣式 */
+header {
+  position: relative;
+  text-align: center;
+  /* 文字置中 */
+  padding: 10px;
+  background-image: url('./image/music-notes.png') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 50px;
+  height: auto;
+}
+
+.header-text h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.header-text p {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+/* 分區樣式 */
+.section {
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+  /* 分區背景保持白色 */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  /* 增加陰影層次 */
+}
+
+.section h2 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+/* 卡片樣式 */
+.card {
+  margin-bottom: 10px;
+  /* 卡片間距 */
+  padding: 15px;
+  background-color: #f5f1eb;
+  /* 柔和金色背景 */
+  border-left: 5px solid #e37255;
+  /* 橙色強調分隔線 */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* 卡片陰影 */
+}
+
+.card h3 {
+  color: #661115;
+  /* 標題字體顏色 */
+  font-size: 1rem;
+  margin: 0 0 5px;
+  /* 與下方文字間距 */
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  /* 調整行間距，緊湊但不擁擠 */
+  color: #555;
+}
+
+.italic-custom {
+  font-family: 'Cormorant Upright', serif;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.ending-greeting {
+  font-style: italic;
+  text-align: center;
+}
+
+/* 頁尾樣式 */
+footer {
+  text-align: center;
+  padding: 5px;
+  margin-top: 20px;
+  background-color: #fddd66;
+  /* 統一背景色 */
+  color: #661115;
+  /* 統一文字顏色 */
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+}
+
+@media (max-width: 355px) {
+  .logo {
+    position: static;
+    /* 移除絕對定位 */
+    margin: 0 auto;
+    /* 讓 LOGO 居中 */
+    display: block;
+    /* 確保 LOGO 是獨立一行 */
+  }
+  .header-text {
+    margin-top: 5px;
+  }
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out; /* 平滑展開效果 */
+}
+
+.content.show {
+  max-height: 1000px; /* 需設定足夠大的值來支持展開動畫 */
+}
+
+.toggle-button {
+  cursor: pointer; /* 手機上可用作觸控指示 */
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+/* 箭頭樣式 */
+.arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease; /* 旋轉動畫 */
+}
+
+/* 展開時箭頭向上 */
+.content.show + .toggle-button .arrow {
+  transform: rotate(180deg);
+}
+
+/* 卡片樣式保持不變 */
+.card {
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: #f5f1eb;
+  border-left: 5px solid #e37255;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
