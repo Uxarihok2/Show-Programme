@@ -140,7 +140,7 @@ footer {
 }
 
 .content.show {
-  max-height: 3000px; /* 需設定足夠大的值來支持展開動畫 */
+  max-height: 9000px; /* 需設定足夠大的值來支持展開動畫 */
 }
 
 .toggle-button {
